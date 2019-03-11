@@ -8,19 +8,11 @@
     <br>
     <span>Picked: {{ picked }}</span>
     <input v-model="message" placeholder="edit me">
-    <svg width="351.640625" height="175.90625" :name="`hola${message}`" ref="svg">
+    <svg width="351.640625" height="229" :name="`hola${message}`" ref="svg">
+      <SVGFontLoader />
       <defs>
-        <style type="text/css">
-          @font-face {
-            font-family: "Graphik";
-            font-style: normal;
-            font-display: swap;
-            font-weight: 200;
-            src: url("/fonts/Graphik-Regular.woff2") format("woff2");
-          }
-        </style>
         <filter xmlns="http://www.w3.org/2000/svg" id="ejemplo_over">
-          <feFlood x="70" y="70" width="100%" height="20" result="img2"></feFlood>
+          <feFlood x="0" y="128" width="100%" height="20" result="img2"></feFlood>
           <feComposite in="SourceGraphic" in2="img2" operator="out"></feComposite>
         </filter>
         <linearGradient id="Gradient">
@@ -29,14 +21,16 @@
         </linearGradient>
       </defs>
       <g :fill="getLogoColor" filter="url(#ejemplo_over)">
-        <text x="0" y="120" ref="text" style="font-size:176px; font-family:'Graphik'">hola{{ message }}</text>
+        <text x="0" y="181" ref="text" style="font-size:176px; font-family:'Ciutadella'; letter-spacing: -1.9px;">hola{{ message }}</text>
       </g>
     </svg>
-    <canvas style="display: none" id="canvas" ref="canvas"></canvas>
+    <canvas style="display:none;" id="canvas" ref="canvas"></canvas>
     <button @click="downloadPNG">Download</button>
   </div>
 </template>
 <script>
+  import SVGFontLoader from '~/components/SVGFontLoader'
+
   export default {
     data () {
       return {
@@ -44,6 +38,11 @@
         picked: ''
       }
     },
+
+    components: {
+      SVGFontLoader
+    },
+
     computed: {
       backgroundColor () {
         if (this.picked === 'Gradient') return 'background-image: linear-gradient(90deg,#e6007d,#f06c17);'
@@ -68,7 +67,6 @@
         const url = win.createObjectURL(blob);
         img.onload = function () {
           canvas.getContext("2d").drawImage(img, 0, 0)
-          win.revokeObjectURL(url);
           const uri = canvas.toDataURL('image/png').replace('image/png', 'octet/stream');
           const a = document.createElement("a");
           document.body.appendChild(a);
@@ -76,7 +74,6 @@
           a.href = uri
           a.download = (svg.getAttribute('name') || 'untitled') + '.png';
           a.click();
-          window.URL.revokeObjectURL(uri);
           document.body.removeChild(a);
         };
         img.src = url;
