@@ -113,7 +113,7 @@
 
     &__title {
       &--coming {
-        color: $secondary-lighter;
+        color: $grey-2;
       }
     }
 

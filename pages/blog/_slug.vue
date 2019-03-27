@@ -95,10 +95,10 @@
     },
 
     computed: {
-      ogImage: function () {
+      ogImage () {
         return `${process.env.baseUrl}/images/blog/${this.id}/_thumbnail.jpg`;
       },
-      pageTitle: function () {
+      pageTitle () {
         return this.title + ' – Marina Aisa';
       },
       showLocales () {

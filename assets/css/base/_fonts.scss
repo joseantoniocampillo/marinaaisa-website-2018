@@ -22,7 +22,7 @@
   src: url("/fonts/Tiempos-Headline-Semibold.woff2") format("woff2");
 }
 
-$font-base-color:             $secondary-lighter;
+$font-base-color:             $grey-2;
 $font-family-base:            'Graphik', Arial, sans-serif;
 $font-family-blog:            'Tiempos Headline', Arial, sans-serif;
 $line-height-base:            1.5;
@@ -64,7 +64,7 @@ body {
 
 p,ul,ol,blockquote,.content-block{
   margin-top: 0;
-  margin-bottom: 1.8em;
+  margin-bottom: 2.4rem;
   @include content-blocks{
     margin-top: 1em;
   }

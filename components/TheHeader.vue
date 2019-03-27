@@ -70,11 +70,11 @@ export default {
   }
 
   a {
-    color: $secondary-light;
+    color: $grey-1;
   }
 
   &--dark {
-    background-color: $secondary-light;
+    background-color: $grey-1;
 
     a {
       color: white;

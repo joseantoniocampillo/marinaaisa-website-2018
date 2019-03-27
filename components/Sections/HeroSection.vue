@@ -50,7 +50,7 @@ export default {
 <style lang="scss">
 .hero {
   width: 100%;
-  background: $secondary-light;
+  background: $grey-1;
   text-align: center;
   position: relative;
   

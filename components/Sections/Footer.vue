@@ -35,7 +35,7 @@ export default {
 	&__main {
 		padding: 50px 0;
 		background-color: $background-secondary;
-		border-bottom: 1px solid darken($secondary-light,40%);
+		border-bottom: 1px solid darken($grey-1,40%);
   }
   
 	&__contact {

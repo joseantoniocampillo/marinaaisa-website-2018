@@ -88,13 +88,13 @@ section {
 
 button {
   display: inline-block;
-  border: 1px solid $primary;
   padding: 1rem 2rem;
   margin: 0;
-  background-color: transparent;
+  background-color: $primary;
   text-decoration: none;
   color: #ffffff;
   cursor: pointer;
+  border: 0;
   text-align: center;
   transition: background 250ms ease-in-out, 
               transform 150ms ease;
@@ -103,8 +103,7 @@ button {
 }
 
 button:hover {
-  border-color: $primary;
-  background-color: $primary;
+  background-color: #574bc1;
 }
 
 button:focus {
@@ -113,4 +112,38 @@ button:focus {
 
 button:active {
   transform: scale(0.99);
+}
+
+.text-input {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 4px;
+  }
+
+  &__field {
+    transition: border .1s ease;
+    border: 1px solid $grey-3;
+    background-color: white;
+    padding: 0 8px;
+    height: 36px;
+    font-size: 16px;
+
+    &:active,
+    &:hover {
+      outline: none;
+      border: 1px solid $primary;
+    }
+
+    &:focus {
+      outline-offset: 0;
+      border: 1px solid $primary;
+    }
+
+    &:disabled {
+      background-color: grey;
+      pointer-events: none;
+    }
+  }
 }

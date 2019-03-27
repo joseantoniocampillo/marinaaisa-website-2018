@@ -5,6 +5,7 @@ import map from './map'
 import footer from './footer'
 import works from './works'
 import indexPageHead from './index-page-head'
+import holalogo from './holalogo'
 
 export default {
   changeLanguagePost: 'Post available in English',
@@ -20,5 +21,6 @@ export default {
   callAction: 'Si quieres saber lo que otros profesionales con los que he trabajado y admiro piensan de mí, échale un vistazo a mi <a target="_blank" href="https://www.linkedin.com/in/marinaaisa/" class="ani linkedin"><span>Linkedin</span></a> <span class="emoji-small emoji--loved"/>',
   map: map,
   footer: footer,
-  works: works
+  works: works,
+  holalogo: holalogo
 }
